@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #030303;
+  --foreground: #f2f5f8;
+  --cyan: #00f0ff;
+  --orange: #ff4d00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #030303;
+  color: #f2f5f8;
+  overflow-x: hidden;
+  selection-background-color: #00f0ff;
+  selection-color: #030303;
+  cursor: default;
+}
+
+::selection {
+  background: #00f0ff;
+  color: #030303;
+}
+
+/* Custom Cybernetic Grid */
+.cyber-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(0, 240, 255, 0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* Radial Glows */
+.radial-cyan-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(0, 240, 255, 0.18) 0%, rgba(3, 3, 3, 0) 70%);
+}
+
+.radial-orange-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(255, 77, 0, 0.15) 0%, rgba(3, 3, 3, 0) 70%);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(13, 15, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(13, 15, 20, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.08);
+}
+
+/* Cybernetic corner clips */
+.clip-chamfer {
+  clip-path: polygon(
+    0 16px,
+    16px 0,
+    100% 0,
+    100% calc(100% - 16px),
+    calc(100% - 16px) 100%,
+    0 100%
+  );
+}
+
+.clip-corner-tl-br {
+  clip-path: polygon(
+    14px 0%,
+    100% 0%,
+    100% calc(100% - 14px),
+    calc(100% - 14px) 100%,
+    0% 100%,
+    0% 14px
+  );
+}
+
+/* Glow filters */
+.glow-text-cyan {
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.6), 0 0 40px rgba(0, 240, 255, 0.2);
+}
+
+.glow-text-orange {
+  text-shadow: 0 0 20px rgba(255, 77, 0, 0.6), 0 0 40px rgba(255, 77, 0, 0.2);
+}
+
+/* Hide scrollbar for clean UI while preserving Lenis */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2230;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f0ff;
+}
